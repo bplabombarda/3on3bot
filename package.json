@@ -1,0 +1,22 @@
+{
+  "name": "3on3bot",
+  "version": "0.0.1",
+  "description": "A Twitter bot that tweets when a NHL game has gone to 3-on-3.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/bplabombarda/3on3bot.git"
+  },
+  "author": "Brett LaBombarda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/bplabombarda/3on3bot/issues"
+  },
+  "homepage": "https://gitlab.com/bplabombarda/3on3bot#README",
+  "dependencies": {
+    "twitter": "^1.2.5"
+  }
+}
