@@ -17,6 +17,7 @@
   },
   "homepage": "https://gitlab.com/bplabombarda/3on3bot#README",
   "dependencies": {
+    "cheerio": "^0.19.0",
     "twitter": "^1.2.5"
   }
 }
