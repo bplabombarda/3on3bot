@@ -36,7 +36,6 @@ print(status)
 # Get HTML content
 # =====================================================================
 page = requests.get(url)
-
 soup = BeautifulSoup(page.text, "html.parser")
 scores = soup.select(".game-card-container")
 
@@ -54,10 +53,11 @@ def check_scores(scores):
 
             if child.text:
                 period_status = child.text.split()
+                print(period_status)
 
-                # if period_status[0] == 'End' and period_status[1] =='3RD':
-                if period_status[0] == 'End':
+                if period_status[0] == 'End' and period_status[1] =='3RD':
                     print("Overtime!")
+
                     status = str(awayTeam) + " vs " + str(homeTeam) + " #3on3"
                     api.update_status(status=status)
                     print(status)
@@ -68,5 +68,5 @@ def check_scores(scores):
 
             print(child.text)
 
-            
+
 check_scores(scores)
