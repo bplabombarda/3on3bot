@@ -12,7 +12,7 @@ access_token = '4026302193-PtfGQ6OCO8zbUwhOelJpOJCOAU5WZceKgddvEVE'
 access_token_secret = '3Q7WwXagKVkSvvmIBSoEK6ZhfqoPFsawtSgNTVcb4mVRh'
 
 url = 'http://www.sportsnet.ca/hockey/nhl/scores/'
-# --- MOVE TO CONFIG --------------------------------------------------
+# --- END MOVE TO CONFIG ----------------------------------------------
 
 # =====================================================================
 # Auth Twitter API Kajigger & create API refernce Kajigger
@@ -46,16 +46,13 @@ scores = soup.select(".game-card-container")
 # Czechs text for which period ended. If 3rd, tweets which game.
 # =====================================================================
 def check_scores(scores):
-
     for score in scores:
-
         game_time = score.find_all(class_="period-end")
         print(game_time, type(game_time))
 
         for child in game_time:
 
             if child.text:
-
                 period_status = child.text.split()
 
                 # if period_status[0] == 'End' and period_status[1] =='3RD':
@@ -68,11 +65,8 @@ def check_scores(scores):
                     print("Nooovertime :(((")
 
                 print(period_status)
-            print(child.text)
-        #
-        # per = score.select(".period-end > strong")
-        #
-        # for i in per:
-        #     print(i.text)
 
+            print(child.text)
+
+            
 check_scores(scores)
