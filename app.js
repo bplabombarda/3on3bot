@@ -1,5 +1,25 @@
 var Twitter = require('twitter');
 var config = require('./config.js');
+var express = require('express');
+var app = express();
+
+// ====================================================================
+// Routes
+// ====================================================================
+// GET method route
+app.get('/', function(req, res) {
+    res.send('GET request');
+});
+
+// POST method route
+app.post('/', function(req, res) {
+    res.send('POST request');
+});
+
+app.all('/secret', function(req, res, next) {
+    console.log("Accessing the secret!");
+    next(); // pass control to the next handler
+});
 
 // ====================================================================
 // Twitter Hookups
@@ -15,7 +35,7 @@ var homeTeam = 'VAN',
     awayTeam = 'CGY';
 
 var params = {
-    status: awayTeam + ' @ ' + homeTeam + ' #3on3'
+    status: awayTeam + ' @ ' + homeTeam + ' #NHL3on3'
 };
 
 client.post('statuses/update', params, function(error, tweet, response){

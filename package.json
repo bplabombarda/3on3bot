@@ -18,6 +18,10 @@
   "homepage": "https://gitlab.com/bplabombarda/3on3bot#README",
   "dependencies": {
     "cheerio": "^0.19.0",
+    "express": "^4.13.3",
+    "react": "^0.14.1",
+    "redux": "^3.0.4",
+    "request": "^2.65.0",
     "twitter": "^1.2.5"
   }
 }
