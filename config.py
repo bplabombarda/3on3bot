@@ -1,7 +1,42 @@
 # =====================================================================
-# Twitter API Kajigger
+# Define the application directory
 # =====================================================================
-consumer_key = ''
-consumer_secret = ''
-access_token = ''
-access_token_secret = ''
+import os
+BASE_DIR = os.path.abspath(os.path.dirname(__file__))
+
+# =====================================================================
+# Enter database URI and credentials
+# =====================================================================
+db_user = "chetnet"
+db_pass ="sQrR4cGennT6SCUj"
+db_uri = ""
+
+# =====================================================================
+# Build the DB URI here for SQLAlchemy & other options
+# =====================================================================
+SQLALCHEMY_DATABASE_URI = "postgresql+psycopg2://" + db_user + ":" + db_pass + \
+                            "@" + db_uri + "/" + "?charset=utf8mb4"
+
+DATABASE_CONNECT_OPTIONS = {}
+
+# =====================================================================
+# Twitter API Kajigger 🐦
+# =====================================================================
+CONSUMER_KEY = ""
+CONSUMER_SECRET = ""
+ACCESS_TOKEN = ""
+ACCESS_TOKEN_SECRET = ""
+URL = ""
+
+# =====================================================================
+# Twitter Status Kajigger 🐦
+# =====================================================================
+HASHTAG = "NHL3on3"
+
+# =====================================================================
+# Application threads. A common general assumption is
+# using 2 per available processor cores - to handle
+# incoming requests using one and performing background
+# operations using the other
+# =====================================================================
+THREADS_PER_PAGE = 2
