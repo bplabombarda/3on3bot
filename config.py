@@ -3,7 +3,6 @@
 # =====================================================================
 import os
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
-campaign_name = ''
 
 # =====================================================================
 # Enter database URI and credentials
