@@ -1,14 +1,14 @@
 # =====================================================================
 # This is the name of the campaign's specific database.
 # =====================================================================
-campaign_name = 'pledge-tool'
+campaign_name = ''
 
 # =====================================================================
 # Enter database URI and credentials.
 # =====================================================================
-db_user = 'emmisdigital'
-db_pass ='Digital1313'
-db_uri = 'emmisservices.cwh5q682finc.us-east-1.rds.amazonaws.com'
+db_user = ''
+db_pass =''
+db_uri = ''
 
 # =====================================================================
 # Build the DB URI here for SQLAlchemy.
