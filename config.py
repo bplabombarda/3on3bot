@@ -1,25 +1,42 @@
 # =====================================================================
-# This is the name of the campaign's specific database.
+# Define the application directory
 # =====================================================================
-campaign_name = 'pledge-tool'
+import os
+BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 
 # =====================================================================
-# Enter database URI and credentials.
+# Enter database URI and credentials
 # =====================================================================
-db_user = 'emmisdigital'
-db_pass ='Digital1313'
-db_uri = 'emmisservices.cwh5q682finc.us-east-1.rds.amazonaws.com'
+db_user = "chetnet"
+db_pass ="sQrR4cGennT6SCUj"
+db_uri = ""
 
 # =====================================================================
-# Build the DB URI here for SQLAlchemy.
+# Build the DB URI here for SQLAlchemy & other options
 # =====================================================================
-SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://' + db_user + ':' + db_pass + '@' + \
-                            db_uri + '/' + campaign_name + '?charset=utf8mb4'
+SQLALCHEMY_DATABASE_URI = "postgresql+psycopg2://" + db_user + ":" + db_pass + \
+                            "@" + db_uri + "/" + "?charset=utf8mb4"
+
+DATABASE_CONNECT_OPTIONS = {}
 
 # =====================================================================
-# Twitter API Kajigger
+# Twitter API Kajigger 🐦
 # =====================================================================
-consumer_key = ''
-consumer_secret = ''
-access_token = ''
-access_token_secret = ''
+CONSUMER_KEY = ""
+CONSUMER_SECRET = ""
+ACCESS_TOKEN = ""
+ACCESS_TOKEN_SECRET = ""
+URL = ""
+
+# =====================================================================
+# Twitter Status Kajigger 🐦
+# =====================================================================
+HASHTAG = "NHL3on3"
+
+# =====================================================================
+# Application threads. A common general assumption is
+# using 2 per available processor cores - to handle
+# incoming requests using one and performing background
+# operations using the other
+# =====================================================================
+THREADS_PER_PAGE = 2
