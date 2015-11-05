@@ -1,0 +1,26 @@
+{
+  "name": "3on3bot",
+  "description": "A Twitter bot that tweets when a NHL game has gone to 3-on-3 overtime.",
+  "main": "app.js",
+  "authors": [
+    "Brett LaBombarda"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/bplabombarda/3on3bot",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/static/vendors",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "requirejs": "~2.1.20",
+    "almond": "~0.3.1",
+    "jsx-requirejs-plugin": "~0.6.2",
+    "skeleton": "~2.0.4"
+  }
+}

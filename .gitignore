@@ -1,4 +1,5 @@
 node_modules/
+app/static/vendors/
 config.py
 *.pyc
 __pycache__
