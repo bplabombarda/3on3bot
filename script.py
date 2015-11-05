@@ -2,8 +2,8 @@ import requests
 import tweepy
 from bs4 import BeautifulSoup
 
-# from config import CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN, \
-#                         ACCESS_TOKEN_SECRET, URL, HASHTAG
+from config import CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN, \
+                        ACCESS_TOKEN_SECRET, URL, HASHTAG
 
 # --- MOVE TO CONFIG --------------------------------------------------
 # --- END MOVE TO CONFIG ----------------------------------------------
@@ -11,21 +11,13 @@ from bs4 import BeautifulSoup
 # =====================================================================
 # Auth Twitter API Kajigger & create API refernce Kajigger
 # =====================================================================
-# auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
-# auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
-# api = tweepy.API(auth)
-
-# public_tweets = api.home_timeline()
-# for tweet in public_tweets:
-#     print(tweet.text)
+auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
+auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
+api = tweepy.API(auth)
 
 url = "http://www.sportsnet.ca/hockey/nhl/scores/"
 awayTeam = "NYI"
 homeTeam = "NYR"
-
-# status = str(awayTeam) + " vs " + str(homeTeam) + " #" + str(HASHTAG)
-# print(status)
-# api.update_status(status=status)
 
 # =====================================================================
 # Get HTML content
@@ -70,12 +62,12 @@ def process_score_text(score_nodes):
                 # Build status
                 # =====================================================
                 status = str(awayTeam) + " vs " \
-                            + str(homeTeam) + " " + hashtag
+                            + str(homeTeam) + " " + "#NHL3on3"
 
                 # =====================================================
                 # Post status (tweet)
                 # =====================================================
-                # api.update_status(status=status)
+                api.update_status(status=status)
                 # NOTE: Testing; please get rid of me later
                 print(status)
 
@@ -86,11 +78,6 @@ def process_score_text(score_nodes):
             else:
                 # NOTE: Testing; please get rid of me later
                 print("Nooovertime :(((")
-
-
-# =====================================================================
-#
-# =====================================================================
 
 
 check_scores(scores)

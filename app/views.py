@@ -19,7 +19,7 @@ def index():
 # Get all games. Args: order by "asc" or "desc" by date.
 # =====================================================================
 @app.route('/games/')
-def index():
+def games():
     # =================================================================
     # Parse URL arguments for order parameters
     # =================================================================
@@ -47,6 +47,6 @@ def get_games(game_id):
     # =================================================================
     # Query DB for game based on game_id argument
     # =================================================================
-    game = Campaign.query.filter_by(id=game_id).first()
+    game = Game.query.filter_by(id=game_id).first()
 
     return jsonify(game=game)
