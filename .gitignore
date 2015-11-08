@@ -1,4 +1,12 @@
+<<<<<<< HEAD
 node_modules
 __pycache__
 *.pyc
 .idea
+=======
+node_modules/
+app/static/vendors/
+config.py
+*.pyc
+__pycache__
+>>>>>>> 1fc933745316390a40da91fe66a7d4620cf2b511
