@@ -1,0 +1,45 @@
+body {
+    font-family: 'Contrail One', sans-serif;
+    background: url('img/hockey-ice-background.jpg');
+}
+
+.bender-container {
+    width: 425px;
+    margin: 0 auto;
+    top: 50%;
+
+}
+
+.bender-container h1 {
+    font-size: 64px;
+    color: #FFF78C;
+    text-align: center;
+    text-shadow:
+    3px 3px 0 #000,
+    /* Simulated effect for Firefox and Opera
+       and nice enhancement for WebKit */
+   -1px -1px 0 #000,
+    1px -1px 0 #000,
+   -1px  1px 0 #000,
+    1px  1px 0 #000;
+}
+
+.social-container {
+    width: 425px;
+    margin: 0 auto;
+    text-align: center;
+    align-items: center;
+}
+
+.fa {
+    font-size: 64px;
+    color: #FFF78C;
+    text-shadow:
+    3px 3px 0 #000,
+    /* Simulated effect for Firefox and Opera
+       and nice enhancement for WebKit */
+   -1px -1px 0 #000,
+    1px -1px 0 #000,
+   -1px  1px 0 #000,
+    1px  1px 0 #000;
+}
