@@ -2,8 +2,9 @@
   "name": "3on3bot",
   "version": "0.0.1",
   "description": "A Twitter bot that tweets when a NHL game has gone to 3-on-3 overtime.",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
+    "start": "nodemon app/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,10 +18,30 @@
   },
   "homepage": "https://github.com/bplabombarda/3on3bot#readme",
   "dependencies": {
+    "bunyan": "^1.5.1",
     "cheerio": "^0.19.0",
     "koa": "^1.1.2",
+    "koa-handlebars": "^0.5.7",
+    "koa-mongoose": "^1.0.9",
     "koa-route": "^2.4.2",
+    "koa-static": "^1.5.2",
     "mongoose": "^4.2.4",
+    "react": "^0.14.2",
+    "redux": "^3.0.4",
+    "request": "^2.65.0",
     "twitter": "^1.2.5"
+  },
+  "devDependencies": {
+    "mocha": "^2.3.4",
+    "nodemon": "^1.8.1",
+    "should": "^7.1.1",
+    "supertest": "^1.1.0"
+  },
+  "jshintConfig": {
+    "esnext": true,
+    "noyield": true,
+    "unused": false,
+    "strict": false,
+    "camelcase": false
   }
 }
