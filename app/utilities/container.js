@@ -11,6 +11,12 @@ request(url, function (error, response, body) {
     var gameCards = $('.game-card-container', body);
     var gameStart = $('.game-time-start', gameCards[0]);
 
-    console.log(gameStart);
+    var gameStartHour = gameStart.text().split(':')[0];
+    var ampm = gameStart.text().split(' ')[1];
+
+    var now = new Date();
+    var curHour = now.getHours();
+
+    console.log(curHour, ampm);
 
 });
