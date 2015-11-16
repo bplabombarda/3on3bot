@@ -1,5 +1,7 @@
 var koa = require('koa');
 var route = require('koa-route');
+var mongoose = require('koa-mongoose');
+var User = require('./models/user');
 
 var app = koa();
 

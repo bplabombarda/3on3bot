@@ -1,29 +1,23 @@
 var $ = require('cheerio');
 var request = require('request');
 var Twitter = require('twitter');
+var config = require('../../config');
 
-
-// --- MOVE TO CONFIG --------------------------------------------------
-// process.env.TWITTER_CONSUMER_KEY = '';
-// process.env.TWITTER_CONSUMER_SECRET = '';
-// process.env.TWITTER_ACCESS_TOKEN_KEY = '';
-// process.env.TWITTER_ACCESS_TOKEN_SECRET = '';
-
-var url = 'http://www.sportsnet.ca/hockey/nhl/scores/';
-// --- END MOVE TO CONFIG ----------------------------------------------
+var url = process.env.SCRAPE_URL;
 
 request(url, function (error, response, body) {
 
     var client = new Twitter({
-        consumer_key: '',
-        consumer_secret: '',
-        access_token_key: '',
-        access_token_secret: ''
+        consumer_key: process.env.TWITTER_CONSUMER_KEY,
+        consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
+        access_token_key: process.env.TWITTER_ACCESS_TOKEN_KEY,
+        access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
     });
 
     // Use Cheerio to grab all game cards elements from the response body
     var gameCards = $('.game-card-container', body);
 
+    // Loop over game cards
     for (var i = 0; i < gameCards.length; i++) {
         var gameCard = gameCards[i];
         tweet3on3(gameCard, client);
@@ -46,35 +40,34 @@ function tweet3on3(gameCard, client) {
 
     // Away Team Info
     var awayTeamInfo = $('.team-container-1', gameCard);
-    var awayTeamLogo = $('.scores-team-logo img', awayTeamInfo).attr('src');
-    var awayTeamCity = $('.scores-team-city', awayTeamInfo).text();
+    // var awayTeamLogo = $('.scores-team-logo img', awayTeamInfo).attr('src');
+    // var awayTeamCity = $('.scores-team-city', awayTeamInfo).text();
     var awayTeamName = $('.scores-team-name', awayTeamInfo).text();
     // var awayTeamScore = $('.scores-team-score', awayTeamInfo).text().trim();
 
     // Home Team Info
     var homeTeamInfo = $('.team-container-2', gameCard);
-    var homeTeamLogo = $('.scores-team-logo img', homeTeamInfo).attr('src');
-    var homeTeamCity = $('.scores-team-city', homeTeamInfo).text();
+    // var homeTeamLogo = $('.scores-team-logo img', homeTeamInfo).attr('src');
+    // var homeTeamCity = $('.scores-team-city', homeTeamInfo).text();
     var homeTeamName = $('.scores-team-name', homeTeamInfo).text();
     // var homeTeamScore = $('.scores-team-score', homeTeamInfo).text().trim();
 
-    if ((gamePeriod == '3RD' && gameProgress == 'END') || gamePeriod == 'OT') {
+    if ( (gamePeriod == '3RD' && gameProgress == 'END') || gamePeriod == 'OT') {
         status = awayTeamName + ' @ ' + homeTeamName + ' #3on3bot';
+
+        var params = {status: status};
+        client.post('statuses/update', params, function(error, tweets, response) {
+            if (!error) {
+                console.log(tweets);
+            }
+            else {
+                console.log(error);
+            }
+        });
         console.log('Overtime!');
     }
     else {
-        status = awayTeamName + ' @ ' + homeTeamName + ' #3on3NOT';
-        console.log('Nooovertime! ' + status);
+        console.log('Nooovertime!');
     }
-
-    var params = {status: status};
-    client.post('statuses/update', params, function(error, tweets, response){
-        if (!error) {
-            console.log(tweets);
-        }
-        else {
-            console.log(error);
-        }
-    });
 
 }

@@ -10,6 +10,7 @@ var Twitter = require('twitter');
 // process.env.TWITTER_ACCESS_TOKEN_SECRET = 'mTR80znoNcQqmlFFyBEKHYf23lB2MravbSipsvnEtoMlV';
 
 var url = 'http://www.sportsnet.ca/hockey/nhl/scores/';
+var videoBaseURL = process.env.VIDEO_BASE_URL;
 // --- END MOVE TO CONFIG ----------------------------------------------
 
 var games = [];
