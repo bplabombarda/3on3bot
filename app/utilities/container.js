@@ -3,7 +3,6 @@ var request = require('request');
 var config = require('../../config');
 
 var url = process.env.SCRAPE_URL;
-var currentHour = new Date();
 
 
 request(url, function (error, response, body) {
@@ -11,12 +10,25 @@ request(url, function (error, response, body) {
     var gameCards = $('.game-card-container', body);
     var gameStart = $('.game-time-start', gameCards[0]);
 
-    var gameStartHour = gameStart.text().split(':')[0];
+    var gameStartHour = Number(gameStart.text().split(':')[0]);
     var ampm = gameStart.text().split(' ')[1];
 
     var now = new Date();
     var curHour = now.getHours();
 
-    console.log(curHour, ampm);
+    if (ampm == 'PM') {
+        gameStartHour += 12;
+        console.log(gameStartHour);
+    } else {
+        // console.log(gameStartHour);
+    }
+
+    // console.log(curHour, ampm);
 
 });
+
+function checkSchedule(gameStartHour, curHour) {
+    if(gameStartHour !== 0 && gameStartHour <= (curHour - 1)) {
+        var tweeter = require('./tweeter');
+    }
+}
