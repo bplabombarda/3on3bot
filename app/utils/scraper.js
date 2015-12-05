@@ -19,7 +19,6 @@ request(url, function (error, response, body) {
 
 });
 
-
 function parseGameCard(gameCard) {
 
     // Game ID
