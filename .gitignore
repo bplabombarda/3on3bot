@@ -4,3 +4,4 @@ config.js
 *.pyc
 __pycache__
 *.psd
+ot_test.html
