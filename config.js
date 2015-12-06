@@ -2,7 +2,7 @@
 // URL to scrape
 // ====================================================================
 process.env.SCRAPE_URL = 'http://www.sportsnet.ca/hockey/nhl/scores/';
-process.env.VIDEO_BASE_URL = 'http://www.sportsnet.ca/hockey/nhl/scores/';
+process.env.VIDEO_BASE_URL = 'http://nhl.cdnllnwnl.neulion.net/u/nhlmobile/vod/nhl/';
 
 // ====================================================================
 // Twitter keys and secrets
