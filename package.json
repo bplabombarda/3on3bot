@@ -5,6 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "nodemon app/server.js",
+    "scraper": "node app/utilities/scraper.js",
+    "tweeter": "node app/utilities/tweeter.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

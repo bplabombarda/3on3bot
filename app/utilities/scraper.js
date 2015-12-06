@@ -5,7 +5,6 @@ var config = require('../../config');
 
 var scrape_url = process.env.SCRAPE_URL;
 var videoBaseURL = process.env.VIDEO_BASE_URL;
-// --- END MOVE TO CONFIG ----------------------------------------------
 
 var games = [];
 
