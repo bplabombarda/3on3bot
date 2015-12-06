@@ -3,6 +3,11 @@ import requests
 from bs4 import BeautifulSoup
 
 
+consumer_key = "m0VhXEbzZzmJgwIKvzIbuYpt4"
+consumer_secret = "sgzZaG3UXb8NgWHhBzA3Vs4u3DN3HbhBHlNuCgNgyC16ZkVZqw"
+access_token_secret = "4026302193-84IorOoSRTUy7zzqAt9hQt1RgtMMnGfuC5QPUpc"
+access_token = "mTR80znoNcQqmlFFyBEKHYf23lB2MravbSipsvnEtoMlV"
+
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
@@ -10,32 +15,61 @@ api = tweepy.API(auth)
 res = requests.get('http://www.sportsnet.ca/hockey/nhl/scores/')
 soup = BeautifulSoup(res.text, 'html.parser')
 
+# Grab all game cards elements from the soup
 game_cards = soup.find_all(class_='game-card-container')
 
-# print(game_cards[0].attrs['id'].split('_')[3])
 
-def tweet3on3(game_card, api):
+def parse_game(game_card, api):
 
     # Game ID
     game_id = game_card.attrs['id'].split('_')[3]
     print(game_id)
 
     # Game Info
+    game_start = game_card.find(class_='game-time-start')
     game_status = game_card.find(class_='scores-game-status')
-    print(game_status)
+    # print(game_status.text)
+    game_progress = game_status.find(class_="game-current-time")
+    game_period = game_status.find(class_="game-current-period")
+    period_end = game_status.select('.period_end > strong')
+    overtime = game_card.select('.scores-game-status td')
+
+    print (
+        game_progress,
+        game_period,
+        period_end,
+        # overtime,
+        # game_start
+    )
 
     # Away Team Info
-    game_status = game_card.find(class_='team-container-1')
+    away_team_info = game_card.find(class_='team-container-1')
+    away_team_city = away_team_info.text.strip('\n').split('\n')[2]
+    away_team_name = away_team_info.text.strip('\n').split('\n')[3]
+    away_team_logo = away_team_info.select(
+                        '.scores-team-logo img')[0].attrs['src']
+    away_team_score = away_team_info.find(class_='scores-team-score')
 
     # Home Team Info
-    game_status = game_card.find(class_='team-container-2')
+    home_team_info = game_card.find(class_='team-container-2')
+    home_team_city = home_team_info.text.strip('\n').split('\n')[2]
+    home_team_name = home_team_info.text.strip('\n').split('\n')[3]
+    home_team_logo = home_team_info.select(
+                        '.scores-team-logo img')[0].attrs['src']
+    home_team_score = home_team_info.find(class_='scores-team-score')
 
-    # away_team = ""
-    # home_team = ""
-    #
-    # status = away_team + " @ " + home_team + " #3on3bot"
+    tweet_game(overtime, away_team_name, away_team_score,
+                    home_team_name, home_team_score)
+
+def tweet_game(overtime, away_team_name, away_team_score,
+                home_team_name, home_team_score):
+
+    # if overtime:
+    status = away_team_name + " @ " + home_team_name + " #3on3bot"
+    print(status)
     # api.update_status(status)
 
 
+# Loop over game cards
 for card in game_cards:
-    tweet3on3(card, api)
+    parse_game(card, api)
