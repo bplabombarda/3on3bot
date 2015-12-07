@@ -3,11 +3,6 @@ import requests
 from bs4 import BeautifulSoup
 
 
-consumer_key = "m0VhXEbzZzmJgwIKvzIbuYpt4"
-consumer_secret = "sgzZaG3UXb8NgWHhBzA3Vs4u3DN3HbhBHlNuCgNgyC16ZkVZqw"
-access_token_secret = "4026302193-84IorOoSRTUy7zzqAt9hQt1RgtMMnGfuC5QPUpc"
-access_token = "mTR80znoNcQqmlFFyBEKHYf23lB2MravbSipsvnEtoMlV"
-
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
