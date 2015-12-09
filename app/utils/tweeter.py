@@ -3,12 +3,19 @@ import requests
 from bs4 import BeautifulSoup
 
 
+consumer_key = "m0VhXEbzZzmJgwIKvzIbuYpt4"
+consumer_secret = "sgzZaG3UXb8NgWHhBzA3Vs4u3DN3HbhBHlNuCgNgyC16ZkVZqw"
+access_token_secret = "4026302193-84IorOoSRTUy7zzqAt9hQt1RgtMMnGfuC5QPUpc"
+access_token = "mTR80znoNcQqmlFFyBEKHYf23lB2MravbSipsvnEtoMlV"
+
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 
-res = requests.get('http://www.sportsnet.ca/hockey/nhl/scores/')
-soup = BeautifulSoup(res.text, 'html.parser')
+# res = requests.get('http://www.sportsnet.ca/hockey/nhl/scores/')
+# soup = BeautifulSoup(res.text, 'html.parser')
+test = open('/Users/brett/Projects/3on3bot/app/utils/ot_test.html')
+soup = BeautifulSoup(test, 'html.parser')
 
 # Grab all game cards elements from the soup
 game_cards = soup.find_all(class_='game-card-container')
@@ -25,7 +32,7 @@ def parse_game(game_card, api):
     game_status = game_card.find(class_='scores-game-status')
     game_progress = game_status.find(class_="game-current-time")
     game_period = game_status.find(class_="game-current-period")
-    period_end = game_status.select('.period_end > strong')
+    period_end = game_status.find(class_='period-end')
     overtime = game_card.select('.scores-game-status td')
     game_final = game_card.find(class_='final')
 
@@ -45,27 +52,25 @@ def parse_game(game_card, api):
                         '.scores-team-logo img')[0].attrs['src']
     home_team_score = home_team_info.find(class_='scores-team-score')
 
-    if game_period != None:
-        print(game_period.text)
-        print(game_progress.text)
-        if (game_period.text == 'OT') or (game_period.text == '3RD'):
-            print('Overtime!')
-        else:
-            print('Nooovertime!')
+    if (period_end != None) and (period_end.text.lstrip().split(" ")[1] == '3RD'):
+        print("period_end")
+        print("Overtime! _/ _/ _/")
 
-    if len(period_end):
-        print(period_end[0])
+        tweet_game(overtime, away_team_name, away_team_score,
+                        home_team_name, home_team_score)
 
-    if game_start != None:
-        print(game_start.text)
+    elif overtime[0].text.lstrip().split(" ")[1] == 'OT':
+        print('overtime')
+        print("Overtime! _/ _/ _/")
+        print(overtime[0].text.lstrip().split(" ")[1])
+
+        tweet_game(overtime, away_team_name, away_team_score,
+                        home_team_name, home_team_score)
+
 
     if game_final != None:
+        print("game_final.text")
         print(game_final.text)
-
-
-
-    tweet_game(overtime, away_team_name, away_team_score,
-                    home_team_name, home_team_score)
 
 
 def tweet_game(overtime, away_team_name, away_team_score,
@@ -74,7 +79,7 @@ def tweet_game(overtime, away_team_name, away_team_score,
     if home_team_score and away_team_score:
         print(home_team_score.text.strip(' '), away_team_score.text.strip(' '))
     # if overtime:
-    status = away_team_name + " @ " + home_team_name + " #3on3bot"
+    status = away_team_name + ' @ ' + home_team_name + ' #3on3bot'
     print(status)
     # api.update_status(status)
 
