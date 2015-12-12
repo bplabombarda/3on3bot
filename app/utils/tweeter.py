@@ -3,11 +3,6 @@ import requests
 from bs4 import BeautifulSoup
 
 
-consumer_key = "m0VhXEbzZzmJgwIKvzIbuYpt4"
-consumer_secret = "sgzZaG3UXb8NgWHhBzA3Vs4u3DN3HbhBHlNuCgNgyC16ZkVZqw"
-access_token_secret = "4026302193-84IorOoSRTUy7zzqAt9hQt1RgtMMnGfuC5QPUpc"
-access_token = "mTR80znoNcQqmlFFyBEKHYf23lB2MravbSipsvnEtoMlV"
-
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
@@ -40,48 +35,48 @@ def parse_game(game_card, api):
     away_team_info = game_card.find(class_='team-container-1')
     away_team_city = away_team_info.text.strip('\n').split('\n')[2]
     away_team_name = away_team_info.text.strip('\n').split('\n')[3]
-    away_team_logo = away_team_info.select(
-                        '.scores-team-logo img')[0].attrs['src']
+    # away_team_logo = away_team_info.select(
+    #                     '.scores-team-logo img')[0].attrs['src']
     away_team_score = away_team_info.find(class_='scores-team-score')
 
     # Home Team Info
     home_team_info = game_card.find(class_='team-container-2')
     home_team_city = home_team_info.text.strip('\n').split('\n')[2]
     home_team_name = home_team_info.text.strip('\n').split('\n')[3]
-    home_team_logo = home_team_info.select(
-                        '.scores-team-logo img')[0].attrs['src']
+    # home_team_logo = home_team_info.select(
+    #                     '.scores-team-logo img')[0].attrs['src']
     home_team_score = home_team_info.find(class_='scores-team-score')
 
     if (period_end != None) and (period_end.text.lstrip().split(" ")[1] == '3RD'):
         print("period_end")
-        print("Overtime! _/ _/ _/")
 
-        tweet_game(overtime, away_team_name, away_team_score,
+        tweet_game(api, overtime, away_team_name, away_team_score,
                         home_team_name, home_team_score)
 
     elif overtime[0].text.lstrip().split(" ")[1] == 'OT':
         print('overtime')
-        print("Overtime! _/ _/ _/")
         print(overtime[0].text.lstrip().split(" ")[1])
 
-        tweet_game(overtime, away_team_name, away_team_score,
+        tweet_game(api, overtime, away_team_name, away_team_score,
                         home_team_name, home_team_score)
 
 
-    if game_final != None:
-        print("game_final.text")
-        print(game_final.text)
+    # if game_final != None and \
+    #     game_final.text.replace("FINAL (", "").replace(")", "").split(" ")[0] == 'OT':
+    #     print("game_final.text")
+    #     print(game_final.text.replace("FINAL (", "").replace(")", "").split(" ")[0])
 
 
-def tweet_game(overtime, away_team_name, away_team_score,
+def tweet_game(api, overtime, away_team_name, away_team_score,
                 home_team_name, home_team_score):
 
     if home_team_score and away_team_score:
-        print(home_team_score.text.strip(' '), away_team_score.text.strip(' '))
+        score = home_team_score.text.lstrip()
     # if overtime:
-    status = away_team_name + ' @ ' + home_team_name + ' #3on3bot'
+    status = 'Tied at ' + score + away_team_name + ' @ ' + \
+                home_team_name + ' in #3on3OT'
     print(status)
-    # api.update_status(status)
+    api.update_status(status=status)
 
 
 # Loop over game cards
