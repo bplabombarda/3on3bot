@@ -9,5 +9,5 @@ video_base = 'http://nhl.cdnllnwnl.neulion.net/u/nhlmobile/vod/nhl/';
 # ====================================================================
 consumer_key = ""
 consumer_secret = ""
-access_token_secret = ""
 access_token = ""
+access_token_secret = ""
