@@ -7,10 +7,10 @@ auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 
-# res = requests.get('http://www.sportsnet.ca/hockey/nhl/scores/')
-# soup = BeautifulSoup(res.text, 'html.parser')
-test = open('/Users/brett/Projects/3on3bot/app/utils/ot_test.html')
-soup = BeautifulSoup(test, 'html.parser')
+res = requests.get('http://www.sportsnet.ca/hockey/nhl/scores/')
+soup = BeautifulSoup(res.text, 'html.parser')
+# test = open('/Users/brett/Projects/3on3bot/app/utils/ot_test.html')
+# soup = BeautifulSoup(test, 'html.parser')
 
 # Grab all game cards elements from the soup
 game_cards = soup.find_all(class_='game-card-container')
