@@ -6,3 +6,6 @@ __pycache__
 *.psd
 ot_test.html
 team_twitter_info.csv
+team_video_info.csv
+schedule.json
+tweeter_v2.py

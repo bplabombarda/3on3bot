@@ -1,38 +1,6 @@
 http://nhl.cdnllnwnl.neulion.net/u/nhlmobile/vod/nhl/
 
         2015/11/14/
-        246/
-        2_
-        246
-        _
-        nyr
-        _
-        ott
-        _
-        1516
-        _
-        a
-        _rog_discrete_
-        ott
-        838
-        _goal_
-        1
-        _1600.mp4'
-
-
-        var year,
-            month,
-            date,
-            gameNumber,
-            homeAbbreviation,
-            awayAbbreviation,
-            seasonAbbreviation,
-            eventNumber
-
-
-http://nhl.cdnllnwnl.neulion.net/u/nhlmobile/vod/nhl/
-
-        2015/11/14/
 
         246/
 
@@ -51,3 +19,38 @@ http://nhl.cdnllnwnl.neulion.net/u/nhlmobile/vod/nhl/
         _a_rog_discrete_
 
         ott29_goal_2_1600.mp4
+
+
+http://nhl.cdnllnwnl.neulion.net/u/nhlmobile/vod/nhl/
+
+    date    2015/12/11/
+    ?       428/
+    home    2_
+    ?       428_
+    away    det_
+    home    njd_
+    year    1516_
+    home    h_
+    static  rog_discrete_
+    abbr    n.j
+    event   618_
+    static  goal_
+    1_
+    1600.mp4
+
+http://nhl.cdnllnwnl.neulion.net/u/nhlmobile/vod/nhl/
+
+    2015/10/10/
+    28/
+    2_
+    28_
+    cgy_
+    van_
+    1516_
+    h_
+    rog_discrete_
+    van
+    867_
+    goal_
+    2_
+    1600.mp4
