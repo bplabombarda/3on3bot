@@ -47,7 +47,9 @@ def parse_game(game_card, api):
     #                     '.scores-team-logo img')[0].attrs['src']
     home_team_score = home_team_info.find(class_='scores-team-score')
 
-    if (period_end != None) and (period_end.text.lstrip().split(" ")[1] == '3RD'):
+    if (period_end != None) and (period_end.text.lstrip().split(" ")[1] == '3RD'
+        and away_team_score == home_team_score):
+        
         print("period_end")
 
         tweet_game(api, overtime, away_team_name, away_team_score,
@@ -71,7 +73,7 @@ def tweet_game(api, overtime, away_team_name, away_team_score,
                 home_team_name, home_team_score):
 
     if home_team_score and away_team_score:
-        score = home_team_score.text.lstrip()
+        score = home_team_score.text.lstrip().strip(" ")
     # if overtime:
     status = 'Tied at ' + score + away_team_name + ' @ ' + \
                 home_team_name + ' in #3on3OT'
