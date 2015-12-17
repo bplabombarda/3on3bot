@@ -2,14 +2,13 @@ import tweepy
 import requests
 from bs4 import BeautifulSoup
 
-
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 
 res = requests.get('http://www.sportsnet.ca/hockey/nhl/scores/')
 soup = BeautifulSoup(res.text, 'html.parser')
-# test = open('/Users/brett/Projects/3on3bot/app/utils/ot_test.html')
+# test = open('/Users/brett/Projects/3on3bot/ot_test.html')
 # soup = BeautifulSoup(test, 'html.parser')
 
 # Grab all game cards elements from the soup
@@ -48,19 +47,19 @@ def parse_game(game_card, api):
     home_team_score = home_team_info.find(class_='scores-team-score')
 
     if (period_end != None) and (period_end.text.lstrip().split(" ")[1] == '3RD'
-        and away_team_score == home_team_score):
-        
+        and away_team_score.text == home_team_score.text):
+
         print("period_end")
 
-        tweet_game(api, overtime, away_team_name, away_team_score,
-                        home_team_name, home_team_score)
+        # tweet_game(api, overtime, away_team_name, away_team_score,
+        #                 home_team_name, home_team_score)
 
     elif overtime[0].text.lstrip().split(" ")[1] == 'OT':
         print('overtime')
         print(overtime[0].text.lstrip().split(" ")[1])
 
-        tweet_game(api, overtime, away_team_name, away_team_score,
-                        home_team_name, home_team_score)
+        # tweet_game(api, overtime, away_team_name, away_team_score,
+        #                 home_team_name, home_team_score)
 
 
     # if game_final != None and \
