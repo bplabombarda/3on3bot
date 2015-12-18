@@ -1,10 +1,4 @@
-// 20151217210741
-// http://live.nhle.com/GameData/RegularSeasonScoreboardv3.jsonp
-
-loadScoreboard({
-  "startIndex": 2,
-  "refreshInterval": 0,
-  "games": [
+[
     {
       "id": 2015020464,
       "gs": 5,
@@ -54,7 +48,7 @@ loadScoreboard({
     {
       "id": 2015020469,
       "gs": 4,
-      "ts": "03:30 3rd",
+      "ts": "END 3rd",
       "tsc": "critical",
       "bs": "LIVE",
       "bsc": "progress",
@@ -77,7 +71,7 @@ loadScoreboard({
     {
       "id": 2015020470,
       "gs": 4,
-      "ts": "00:48 3rd",
+      "ts": "END 3rd",
       "tsc": "critical",
       "bs": "LIVE",
       "bsc": "progress",
@@ -87,7 +81,7 @@ loadScoreboard({
       "atc": "progress",
       "htn": "MontrÃ©al",
       "htv": "canadiens",
-      "hts": "0",
+      "hts": "3",
       "htc": "progress",
       "pl": true,
       "rl": false,
@@ -304,5 +298,4 @@ loadScoreboard({
       "ustv": "",
       "catv": "SN360"
     }
-  ]
-})
+]

@@ -1,0 +1,122 @@
+[
+    {
+        "team_name": "ducks",
+        "hashtag": "#NHLDucks"
+    },
+    {
+        "team_name": "coyotes",
+        "hashtag": "#Coyotes"
+    },
+    {
+        "team_name": "bruins",
+        "hashtag": "#NHLBruins"
+    },
+    {
+        "team_name": "sabres",
+        "hashtag": "#Sabres"
+    },
+    {
+        "team_name": "flames",
+        "hashtag": "#Flames"
+    },
+    {
+        "team_name": "hurricanes",
+        "hashtag": "#Canes"
+    },
+    {
+        "team_name": "blackhawks",
+        "hashtag": "#Blackhawks"
+    },
+    {
+        "team_name": "avalanche",
+        "hashtag": "#Avs"
+    },
+    {
+        "team_name": "bluejackets",
+        "hashtag": "#CBJ"
+    },
+    {
+        "team_name": "stars",
+        "hashtag": "#Stars"
+    },
+    {
+        "team_name": "redwings",
+        "hashtag": "#RedWings"
+    },
+    {
+        "team_name": "oilers",
+        "hashtag": "#Oilers"
+    },
+    {
+        "team_name": "panthers",
+        "hashtag": "#FlaPanthers"
+    },
+    {
+        "team_name": "kings",
+        "hashtag": "#LAKings"
+    },
+    {
+        "team_name": "wild",
+        "hashtag": "#mnwild"
+    },
+    {
+        "team_name": "canadiens",
+        "hashtag": "#Habs"
+    },
+    {
+        "team_name": "predators",
+        "hashtag": "#Preds"
+    },
+    {
+        "team_name": "devils",
+        "hashtag": "#NJDevils"
+    },
+    {
+        "team_name": "islanders",
+        "hashtag": "#Isles"
+    },
+    {
+        "team_name": "rangers",
+        "hashtag": "#NYR"
+    },
+    {
+        "team_name": "senators",
+        "hashtag": "#Sens"
+    },
+    {
+        "team_name": "flyers",
+        "hashtag": "#Flyers"
+    },
+    {
+        "team_name": "penguins",
+        "hashtag": "#Pens"
+    },
+    {
+        "team_name": "sharks",
+        "hashtag": "#SJSharks"
+    },
+    {
+        "team_name": "blues",
+        "hashtag": "#stlblues"
+    },
+    {
+        "team_name": "lightning",
+        "hashtag": "#TBLightning"
+    },
+    {
+        "team_name": "mapleleafs",
+        "hashtag": "#Leafs"
+    },
+    {
+        "team_name": "canucks",
+        "hashtag": "#Canucks"
+    },
+    {
+        "team_name": "capitals",
+        "hashtag": "#Caps"
+    },
+    {
+        "team_name": "jets",
+        "hashtag": "#NHLJets"
+    }
+]
