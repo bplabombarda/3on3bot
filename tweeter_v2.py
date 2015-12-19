@@ -7,17 +7,17 @@ auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 
-# res = requests.get('http://live.nhle.com/GameData/RegularSeasonScoreboardv3.jsonp')
-# data = res.text[15:-1]
-# json_data = json.loads(data)
-# games = json_data['games']
+res = requests.get('http://live.nhle.com/GameData/RegularSeasonScoreboardv3.jsonp')
+data = res.text[15:-1]
+json_data = json.loads(data)
+games = json_data['games']
 
 # =====================================================================
 # Testing shit
 # =====================================================================
-with open('critical_LAK.json', 'r') as data_file:
-    data = data_file.read()
-    games = json.loads(data)
+# with open('ot_SJS.json', 'r') as data_file:
+#     data = data_file.read()
+#     games = json.loads(data)
 
 # =====================================================================
 # Load hashtag JSON file
@@ -50,8 +50,7 @@ def parse_game(game, hashtags):
     # =====================================================================
     # Check END 3RD
     # =====================================================================
-    if game['tsc'] == 'critical' and \
-        game['bs'] == 'LIVE' and \
+    if game['bs'] == 'LIVE' and \
         game['ts'] == 'END 3rd':
 
         tweet_game(api, away_team_ht, away_team_score,
@@ -60,12 +59,11 @@ def parse_game(game, hashtags):
     # =====================================================================
     # Check OT
     # =====================================================================
-    elif game['tsc'] == 'critical' and \
-        game['bs'] == 'LIVE' and \
+    elif game['bs'] == 'LIVE' and \
         game['ts'].split(" ")[1] == 'OT':
 
-        tweet_game(api, away_team_name, away_team_score,
-                    home_team_name, home_team_score)
+        tweet_game(api, away_team_ht, away_team_score,
+                    home_team_ht, home_team_score)
 
 
 def tweet_game(api, away_team_ht, away_team_score,
@@ -76,10 +74,11 @@ def tweet_game(api, away_team_ht, away_team_score,
         status = away_team_ht + ' @ ' + home_team_ht + \
                     ' tied at ' + score + ' in #3on3OT'
         print(status)
-        api.update_status(status=status)
+        # api.update_status(status=status)
 
     else:
         pass
 
 for game in games:
     parse_game(game, hashtags)
+    # print(game['ts'].split(" "))
