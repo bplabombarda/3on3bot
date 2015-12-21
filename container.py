@@ -16,10 +16,5 @@ for game in schedule:
     today = datetime.strftime(datetime.now(), '%Y%m%d')
     currtime = datetime.strftime(datetime.now(), '%H')
 
-    if date == today and (currtime >= str(int(hour) - 3)):
-        os.system("python tweeter_v2.py")
-
-    elif:
-
-
-# print(today, currtime, hour)
+    if date == today:
+        print(today, currtime, hour)

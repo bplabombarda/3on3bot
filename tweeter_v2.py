@@ -4,22 +4,15 @@ import json
 import tweepy
 import requests
 
-# =====================================================================
-# 3on3bot Credentials
-# =====================================================================
-consumer_key = 'wJhv18AVOcjPbC2yhZwmp6vyg'
-consumer_secret = '67JIesVJAOnUw035SAFgEaGFFGoXTSYsnc7KtwlFyFy7ujO8vq'
-access_token = '4026302193-84IorOoSRTUy7zzqAt9hQt1RgtMMnGfuC5QPUpc'
-access_token_secret = 'mTR80znoNcQqmlFFyBEKHYf23lB2MravbSipsvnEtoMlV'
-
 dir_path = os.path.dirname(os.path.abspath(__file__))
 
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 
-url = 'http://live.nhle.com/GameData/RegularSeasonScoreboardv3.jsonp
-res = requests.get(url)
+url = 'http://live.nhle.com/GameData/RegularSeasonScoreboardv3.jsonp'
+headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36'}
+res = requests.get(url, headers=headers)
 data = res.text[15:-1]
 json_data = json.loads(data)
 games = json_data['games']
@@ -27,7 +20,7 @@ games = json_data['games']
 # =====================================================================
 # Testing shit
 # =====================================================================
-# with open('ot_SJS.json', 'r') as data_file:
+# with open(os.path.join(dir_path, 'ot_SJS.json'), 'r') as data_file:
 #     data = data_file.read()
 #     games = json.loads(data)
 
@@ -85,12 +78,11 @@ def tweet_game(api, away_team_ht, away_team_score,
         score = home_team_score
         status = away_team_ht + ' @ ' + home_team_ht + \
                     ' tied at ' + score + ' in #3on3OT'
-        print(status)
-        # api.update_status(status=status)
+        # print(status)
+        api.update_status(status=status)
 
     else:
         pass
 
 for game in games:
     parse_game(game, hashtags)
-    # print(game['ts'].split(" "))
