@@ -1,122 +1,152 @@
 [
     {
         "team_name": "ducks",
-        "hashtag": "#NHLDucks"
+        "hashtag": "#NHLDucks",
+        "abbreviation": "ANA"
     },
     {
         "team_name": "coyotes",
-        "hashtag": "#Coyotes"
+        "hashtag": "#Coyotes",
+        "abbreviation": "ARI"
     },
     {
         "team_name": "bruins",
-        "hashtag": "#NHLBruins"
+        "hashtag": "#NHLBruins",
+        "abbreviation": "BOS"
     },
     {
         "team_name": "sabres",
-        "hashtag": "#Sabres"
+        "hashtag": "#Sabres",
+        "abbreviation": "BUF"
     },
     {
         "team_name": "flames",
-        "hashtag": "#Flames"
+        "hashtag": "#Flames",
+        "abbreviation": "CGY"
     },
     {
         "team_name": "hurricanes",
-        "hashtag": "#Canes"
+        "hashtag": "#Canes",
+        "abbreviation": "CAR"
     },
     {
         "team_name": "blackhawks",
-        "hashtag": "#Blackhawks"
+        "hashtag": "#Blackhawks",
+        "abbreviation": "CHI"
     },
     {
         "team_name": "avalanche",
-        "hashtag": "#Avs"
+        "hashtag": "#Avs",
+        "abbreviation": "COL"
     },
     {
         "team_name": "bluejackets",
-        "hashtag": "#CBJ"
+        "hashtag": "#CBJ",
+        "abbreviation": "CBJ"
     },
     {
         "team_name": "stars",
-        "hashtag": "#Stars"
+        "hashtag": "#Stars",
+        "abbreviation": "DAL"
     },
     {
         "team_name": "redwings",
-        "hashtag": "#RedWings"
+        "hashtag": "#RedWings",
+        "abbreviation": "DET"
     },
     {
         "team_name": "oilers",
-        "hashtag": "#Oilers"
+        "hashtag": "#Oilers",
+        "abbreviation": "EDM"
     },
     {
         "team_name": "panthers",
-        "hashtag": "#FlaPanthers"
+        "hashtag": "#FlaPanthers",
+        "abbreviation": "FLA"
     },
     {
         "team_name": "kings",
-        "hashtag": "#LAKings"
+        "hashtag": "#LAKings",
+        "abbreviation": "LAK"
     },
     {
         "team_name": "wild",
-        "hashtag": "#mnwild"
+        "hashtag": "#mnwild",
+        "abbreviation": "MIN"
     },
     {
         "team_name": "canadiens",
-        "hashtag": "#Habs"
+        "hashtag": "#Habs",
+        "abbreviation": "MTL"
     },
     {
         "team_name": "predators",
-        "hashtag": "#Preds"
+        "hashtag": "#Preds",
+        "abbreviation": "NSH"
     },
     {
         "team_name": "devils",
-        "hashtag": "#NJDevils"
+        "hashtag": "#NJDevils",
+        "abbreviation": "NJD"
     },
     {
         "team_name": "islanders",
-        "hashtag": "#Isles"
+        "hashtag": "#Isles",
+        "abbreviation": "NYI"
     },
     {
         "team_name": "rangers",
-        "hashtag": "#NYR"
+        "hashtag": "#NYR",
+        "abbreviation": "NYR"
     },
     {
         "team_name": "senators",
-        "hashtag": "#Sens"
+        "hashtag": "#Sens",
+        "abbreviation": "OTT"
     },
     {
         "team_name": "flyers",
-        "hashtag": "#Flyers"
+        "hashtag": "#Flyers",
+        "abbreviation": "PHI"
     },
     {
         "team_name": "penguins",
-        "hashtag": "#Pens"
+        "hashtag": "#Pens",
+        "abbreviation": "PIT"
     },
     {
         "team_name": "sharks",
-        "hashtag": "#SJSharks"
+        "hashtag": "#SJSharks",
+        "abbreviation": "SJS"
     },
     {
         "team_name": "blues",
-        "hashtag": "#stlblues"
+        "hashtag": "#stlblues",
+        "abbreviation": "STL"
     },
     {
         "team_name": "lightning",
-        "hashtag": "#TBLightning"
+        "hashtag": "#TBLightning",
+        "abbreviation": "TBL"
     },
     {
         "team_name": "mapleleafs",
-        "hashtag": "#Leafs"
+        "hashtag": "#Leafs",
+        "abbreviation": "TOR"
     },
     {
         "team_name": "canucks",
-        "hashtag": "#Canucks"
+        "hashtag": "#Canucks",
+        "abbreviation": "VAN"
     },
     {
         "team_name": "capitals",
-        "hashtag": "#Caps"
+        "hashtag": "#Caps",
+        "abbreviation": "WSH"
     },
     {
         "team_name": "jets",
-        "hashtag": "#NHLJets"
+        "hashtag": "#NHLJets",
+        "abbreviation": "WPG"
     }
 ]

@@ -1,13 +1,25 @@
+import os
 import json
 
 import tweepy
 import requests
 
+# =====================================================================
+# 3on3bot Credentials
+# =====================================================================
+consumer_key = 'wJhv18AVOcjPbC2yhZwmp6vyg'
+consumer_secret = '67JIesVJAOnUw035SAFgEaGFFGoXTSYsnc7KtwlFyFy7ujO8vq'
+access_token = '4026302193-84IorOoSRTUy7zzqAt9hQt1RgtMMnGfuC5QPUpc'
+access_token_secret = 'mTR80znoNcQqmlFFyBEKHYf23lB2MravbSipsvnEtoMlV'
+
+dir_path = os.path.dirname(os.path.abspath(__file__))
+
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 
-res = requests.get('http://live.nhle.com/GameData/RegularSeasonScoreboardv3.jsonp')
+url = 'http://live.nhle.com/GameData/RegularSeasonScoreboardv3.jsonp
+res = requests.get(url)
 data = res.text[15:-1]
 json_data = json.loads(data)
 games = json_data['games']
@@ -22,7 +34,7 @@ games = json_data['games']
 # =====================================================================
 # Load hashtag JSON file
 # =====================================================================
-with open('hashtags.json', 'r') as ht_file:
+with open(os.path.join(dir_path, 'hashtags.json'), 'r') as ht_file:
     data = ht_file.read()
     hashtags = json.loads(data)
 
