@@ -1,17 +1,32 @@
 import os
 import json
+import logging
 
 import tweepy
 import requests
 
 dir_path = os.path.dirname(os.path.abspath(__file__))
 
+logging.basicConfig(filename='error.log',
+                    level=logging.DEBUG,
+                    format='%(asctime)s - %(levelname)s: %(message)s')
+
+# =====================================================================
+# Testing Credentials
+# =====================================================================
+consumer_key = 'ND7UoyGy4GyrkwA7bjTWhijML'
+consumer_secret = 'uJ1uowYRiHm3WMDbUSrKNt0QHWyRf63HHuVhARbGIrrzsYuaZP'
+access_token = '277893983-vllVFZtJLTV1j23fNBi5J9NNI5PZ6Eu2DcF6zHLE'
+access_token_secret = 'yfEQaCx2c9HzgZ32rC8zO50N3bzRsVUzGd1w4PDnsW58P'
+
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 
 url = 'http://live.nhle.com/GameData/RegularSeasonScoreboardv3.jsonp'
-headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36'}
+headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) \
+                            AppleWebKit/537.36 (KHTML, like Gecko) \
+                            Chrome/47.0.2526.106 Safari/537.36'}
 res = requests.get(url, headers=headers)
 data = res.text[15:-1]
 json_data = json.loads(data)
