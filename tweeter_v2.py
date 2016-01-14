@@ -14,10 +14,10 @@ logging.basicConfig(filename='error.log',
 # =====================================================================
 # Testing Credentials
 # =====================================================================
-consumer_key = 'ND7UoyGy4GyrkwA7bjTWhijML'
-consumer_secret = 'uJ1uowYRiHm3WMDbUSrKNt0QHWyRf63HHuVhARbGIrrzsYuaZP'
-access_token = '277893983-vllVFZtJLTV1j23fNBi5J9NNI5PZ6Eu2DcF6zHLE'
-access_token_secret = 'yfEQaCx2c9HzgZ32rC8zO50N3bzRsVUzGd1w4PDnsW58P'
+consumer_key = ''
+consumer_secret = ''
+access_token = ''
+access_token_secret = ''
 
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
