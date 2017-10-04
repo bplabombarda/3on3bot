@@ -1,2 +1,0 @@
-2015-12-21 13:08:42,968 - INFO: Starting new HTTP connection (1): live.nhle.com
-2015-12-21 13:08:43,571 - DEBUG: "GET /GameData/RegularSeasonScoreboardv3.jsonp HTTP/1.1" 200 6287
