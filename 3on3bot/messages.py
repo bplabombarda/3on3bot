@@ -1,11 +1,1 @@
-messages = {
-	'PR': {
-		'message': ''
-	},
-	'R': {
-		'message': ''
-	},
-	'P': {
-		'message': ''
-	}
-}
+messages = {"PR": {"message": ""}, "R": {"message": ""}, "P": {"message": ""}}

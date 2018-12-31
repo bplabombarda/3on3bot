@@ -105,3 +105,6 @@ venv.bak/
 
 # Config
 config
+
+# VSC
+.vscode
