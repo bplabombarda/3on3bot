@@ -1,4 +1,4 @@
-from 3on3bot import __version__
+from bot import __version__
 
 
 def test_version():
