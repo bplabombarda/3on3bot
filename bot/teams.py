@@ -1,186 +1,217 @@
 teams = {
-    "ANA": {
+    "ducks": {
         "name": "ducks",
+        "city": "Anaheim",
         "handle": "@AnaheimDucks",
         "hashtag": "#LetsGoDucks",
         "abbreviation": "ANA",
     },
-    "ARI": {
+    "coyotes": {
         "name": "coyotes",
+        "city": "Arizona",
         "handle": "@ArizonaCoyotes",
         "hashtag": "#Yotes",
         "abbreviation": "ARI",
     },
-    "BOS": {
+    "bruins": {
         "name": "bruins",
+        "city": "Boston",
         "handle": "@NHLBruins",
         "hashtag": "#NHLBruins",
         "abbreviation": "BOS",
     },
-    "BUF": {
+    "sabres": {
         "name": "sabres",
+        "city": "Buffalo",
         "handle": "@BuffaloSabres",
         "hashtag": "#Sabres",
         "abbreviation": "BUF",
     },
-    "CGY": {
+    "flames": {
         "name": "flames",
+        "city": "Calgary",
         "handle": "@NHLFlames",
         "hashtag": "#CofRed",
         "abbreviation": "CGY",
     },
-    "CAR": {
+    "hurricanes": {
         "name": "hurricanes",
+        "city": "Carolina",
         "handle": "@NHLCanes",
         "hashtag": "#Redvolution",
         "abbreviation": "CAR",
     },
-    "CHI": {
+    "blackhawks": {
         "name": "blackhawks",
+        "city": "Chicago",
         "handle": "@NHLBlackhawks",
         "hashtag": "#Blackhawks",
         "abbreviation": "CHI",
     },
-    "COL": {
+    "avalanche": {
         "name": "avalanche",
+        "city": "Colorado",
         "handle": "@Avalanche",
         "hashtag": "#GoAvsGo",
         "abbreviation": "COL",
     },
-    "CBJ": {
+    "bluejackets": {
         "name": "bluejackets",
+        "city": "Columbus",
         "handle": "@BlueJacketsNHL",
         "hashtag": "#CBJ",
         "abbreviation": "CBJ",
     },
-    "DAL": {
+    "stars": {
         "name": "stars",
+        "city": "Dallas",
         "handle": "@DallasStars",
         "hashtag": "#GoStars",
         "abbreviation": "DAL",
     },
-    "DET": {
+    "redwings": {
         "name": "redwings",
+        "city": "Detroit",
         "handle": "@DetroitRedWings",
         "hashtag": "#LGRW",
         "abbreviation": "DET",
     },
-    "EDM": {
+    "oilers": {
         "name": "oilers",
+        "city": "Edmonton",
         "handle": "@EdmontonOilers",
         "hashtag": "#LetsgoOilers",
         "abbreviation": "EDM",
     },
-    "FLA": {
+    "panthers": {
         "name": "panthers",
+        "city": "Florida",
         "handle": "@FlaPanthers",
         "hashtag": "#FlaPanthers",
         "abbreviation": "FLA",
     },
-    "LAK": {
+    "kings": {
         "name": "kings",
+        "city": "Los Angeles",
         "handle": "@LAKings",
         "hashtag": "#GoKingsGo",
         "abbreviation": "LAK",
     },
-    "MIN": {
+    "wild": {
         "name": "wild",
+        "city": "Minnesota",
         "handle": "@mnwild",
         "hashtag": "#mnwild",
         "abbreviation": "MIN",
     },
-    "MTL": {
+    "canadiens": {
         "name": "canadiens",
+        "city": "Montreal",
         "handle": "@CanadiensMTL",
         "hashtag": "#GoHabsGo",
         "abbreviation": "MTL",
     },
-    "NSH": {
+    "predators": {
         "name": "predators",
+        "city": "Nashville",
         "handle": "@PredsNHL",
         "hashtag": "#Preds",
         "abbreviation": "NSH",
     },
-    "NJD": {
+    "devils": {
         "name": "devils",
+        "city": "New Jersey",
         "handle": "@NJDevils",
         "hashtag": "#NJDevils",
         "abbreviation": "NJD",
     },
-    "NYI": {
+    "islanders": {
         "name": "islanders",
+        "city": "New York",
         "handle": "@NYIslanders",
         "hashtag": "#Isles",
         "abbreviation": "NYI",
     },
-    "NYR": {
+    "rangers": {
         "name": "rangers",
+        "city": "New York",
         "handle": "@NYRangers",
         "hashtag": "#NYR",
         "abbreviation": "NYR",
     },
-    "OTT": {
+    "senators": {
         "name": "senators",
+        "city": "Ottawa",
         "handle": "@Senators",
         "hashtag": "#Sens",
         "abbreviation": "OTT",
     },
-    "PHI": {
+    "flyers": {
         "name": "flyers",
+        "city": "Philadelphia",
         "handle": "@NHLFlyers",
         "hashtag": "#LetsGoFlyers",
         "abbreviation": "PHI",
     },
-    "PIT": {
+    "penguins": {
         "name": "penguins",
+        "city": "Pittsburgh",
         "handle": "@penguins",
         "hashtag": "#LetsGoPens",
         "abbreviation": "PIT",
     },
-    "SJS": {
+    "sharks": {
         "name": "sharks",
+        "city": "San Jose",
         "handle": "@SanJoseSharks",
         "hashtag": "#SJSharks",
         "abbreviation": "SJS",
     },
-    "STL": {
+    "blues": {
         "name": "blues",
+        "city": "St. Louis",
         "handle": "@StLouisBlues",
         "hashtag": "#AllTogetherNowSTL",
         "abbreviation": "STL",
     },
-    "TBL": {
+    "lightning": {
         "name": "lightning",
+        "city": "Tampa Bay",
         "handle": "@TBLightning",
         "hashtag": "#GoBolts",
         "abbreviation": "TBL",
     },
-    "TOR": {
+    "mapleleafs": {
         "name": "mapleleafs",
+        "city": "Toronto",
         "handle": "@MapleLeafs",
         "hashtag": "#TMLTalk",
         "abbreviation": "TOR",
     },
-    "VAN": {
+    "canucks": {
         "name": "canucks",
+        "city": "Vancouver",
         "handle": "@Canucks",
         "hashtag": "#Canucks",
         "abbreviation": "VAN",
     },
-    "VGK": {
+    "goldenknights": {
         "name": "goldenknights",
+        "city": "Vegas",
         "handle": "@GoldenKnights",
         "hashtag": "#VegasGoesGold",
         "abbreviation": "VGK",
     },
-    "WSH": {
+    "capitals": {
         "name": "capitals",
+        "city": "Washington",
         "handle": "@Capitals",
         "hashtag": "#ALLCAPS",
         "abbreviation": "WSH",
     },
-    "WPG": {
+    "jets": {
         "name": "jets",
+        "city": "Winnipeg",
         "handle": "@NHLJets",
         "hashtag": "#GoJetsGo",
         "abbreviation": "WPG",
