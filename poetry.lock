@@ -671,6 +671,14 @@ requests = ">=2.0.0"
 
 [[package]]
 category = "main"
+description = "Job scheduling for humans."
+name = "schedule"
+optional = false
+python-versions = "*"
+version = "0.6.0"
+
+[[package]]
+category = "main"
 description = "Send file to trash natively under Mac OS X, Windows and Linux."
 name = "send2trash"
 optional = false
@@ -785,7 +793,7 @@ python-versions = ">=2.7"
 version = "0.5.1"
 
 [metadata]
-content-hash = "6bedbec74d1ea5d44c20c868bfa147cbd99cd303ef04c010ff0809b8377207d8"
+content-hash = "3de8136a1bde7eb693199473f293cfdb07b28e3f5a0d4a52e7b3168acb5c9ac9"
 python-versions = "^3.7"
 
 [metadata.hashes]
@@ -850,6 +858,7 @@ pyzmq = ["1651e52ed91f0736afd6d94ef9f3259b5534ce8beddb054f3d5ca989c4ef7c4f", "5c
 qtconsole = ["4af84facdd6f00a6b9b2927255f717bb23ae4b7a20ba1d9ef0a5a5a8dbe01ae2", "60d61d93f7d67ba2b265c6d599d413ffec21202fec999a952f658ff3a73d252b"]
 requests = ["11e007a8a2aa0323f5a921e9e6a2d7e4e67d9877e85773fba9ba6419025cbeb4", "9cf5292fcd0f598c671cfc1e0d7d1a7f13bb8085e9a590f48c010551dc6c4b31"]
 requests-oauthlib = ["bd6533330e8748e94bf0b214775fed487d309b8b8fe823dc45641ebcd9a32f57", "d3ed0c8f2e3bbc6b344fa63d6f933745ab394469da38db16bdddb461c7e25140", "dd5a0499abfefd087c6dd96693cbd5bfd28aa009719a7f85ab3fabe3956ef19a"]
+schedule = ["3f895a1036799a25ab9c335de917073e63cf8256920917e932777382f101f08f", "f9fb5181283de4db6e701d476dd01b6a3dd81c38462a54991ddbb9d26db857c9"]
 send2trash = ["60001cc07d707fe247c94f74ca6ac0d3255aabcb930529690897ca2a39db28b2", "f1691922577b6fa12821234aeb57599d887c4900b9ca537948d2dac34aea888b"]
 six = ["3350809f0555b11f552448330d0b52d5f24c91a322ea4a15ef22629740f3761c", "d16a0141ec1a18405cd4ce8b4613101da75da0e9a7aec5bdd4fa804d0e0eba73"]
 terminado = ["d9d012de63acb8223ac969c17c3043337c2fcfd28f3aea1ee429b345d01ef460", "de08e141f83c3a0798b050ecb097ab6259c3f0331b2f7b7750c9075ced2c20c2"]

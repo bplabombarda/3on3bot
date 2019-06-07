@@ -1,11 +1,11 @@
 messages = {
     "P": {
-        "message": ""
+        "message": "{} @ {} tied at {} going into #PlayoffOvertime"
     },
     "PR": {
-        "message": ""
+        "message": "{} @ {} tied at {} going into preseason #3on3OT"
     },
     "R": {
-        "message": ""
+        "message": "{} @ {} tied at {} going into #3on3OT"
     }
 }

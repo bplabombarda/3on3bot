@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "3on3bot"
-version = "0.1.0"
+version = "2.0.0"
 description = ""
 authors = ["Brett LaBombarda <bplabombarda@gmail.com>"]
 
@@ -11,6 +11,7 @@ tweepy = "^3.7"
 pyyaml = "^3.13"
 jupyter = "^1.0"
 jupyterthemes = "^0.20.0"
+schedule = "^0.6.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^3.0"

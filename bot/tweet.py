@@ -14,5 +14,9 @@ def game_is_ot(game):
     return
 
 
+def get_message(stage):
+    return
+
+
 def tweet_game():
     return
