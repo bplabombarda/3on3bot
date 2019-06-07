@@ -1,37 +1,43 @@
-import json
-import re
-
-import requests
 import tweepy
 
-from .messages import messages
-from .teams import teams
-
-url = "http://live.nhle.com/GameData/RegularSeasonScoreboardv3.jsonp"
-headers = {
-    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) \
-                            AppleWebKit/537.36 (KHTML, like Gecko) \
-                            Chrome/47.0.2526.106 Safari/537.36"
-}
-res = requests.get(url, headers=headers)
+from bot.constants import OVERTIME_STATUSES
+from bot.messages import messages
+from bot.teams import teams
+from bot.utils import fetch_games
 
 
-def games_from_response():
-    pattern = r"\{(?:{[^{}]*}|[^{}])*}"
-    matches = re.finditer(pattern, res.text, re.MULTILINE)
-    results = [match.group() for match in matches]
-    json_data = json.loads(results[0])
-    return json_data["games"]
+def is_overtime(game):
+    if game["bs"] < "LIVE" and game["ts"].endswith("END 3rd"):
+        return True
+
+    if game["bs"] < "LIVE" and game["ts"].endswith("OT"):
+        return True
+
+    return False
 
 
-def parse_games():
-    games = games_from_response()
-    return games
+def is_tied(game):
+    return game["ats"] == game["hts"]
 
 
-def game_is_ot(game):
-    return
+def get_message(game):
+    away = teams[game["atv"]]
+    home = teams[game["htv"]]
+    message = messages["default"].format(
+        away["handle"],
+        home["handle"],
+        game["hts"]
+    )
+
+    return message
 
 
-def tweet_game():
-    return
+def tweet(game):
+    print(get_message(game))
+
+
+def check_games():
+    games = fetch_games()
+    for game in games:
+        if is_tied(game) and is_overtime(game):
+            tweet(game)
