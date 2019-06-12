@@ -30,3 +30,28 @@ def fetch_games():
         return games
     except:
         print(sys.exc_info()[0])
+
+
+def is_overtime(game):
+    if game["bs"] == "LIVE" and game["ts"].endswith("END 3rd"):
+        return True
+
+    if game["bs"] == "LIVE" and game["ts"].endswith("OT"):
+        return True
+
+    return False
+
+
+def is_tied(game):
+    return game["ats"] == game["hts"]
+
+
+def get_ot_games():
+    games = fetch_games()
+    ot_games = []
+
+    for game in games:
+        if is_tied(game) and is_overtime(game):
+            ot_games.append(game)
+
+    return ot_games
