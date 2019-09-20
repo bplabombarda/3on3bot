@@ -14,9 +14,7 @@ schedule = "^0.6.0"
 [tool.poetry.dev-dependencies]
 pytest = "^3.0"
 autopep8 = "^1.4"
-
-[tool.poetry.scripts]
-test = "pytest"
+jupyter = "^1.0"
 
 [build-system]
 requires = ["poetry>=0.12"]

@@ -7,6 +7,9 @@ import requests
 
 from bot.constants import HEADERS, PATTERN, SOURCE_URL
 
+dirname = os.path.dirname(__file__)
+mock_source = os.path.join(dirname, '../data/sample_games.json')
+
 
 def parse_response(response):
     matches = re.finditer(PATTERN, response.text, re.MULTILINE)
@@ -18,7 +21,7 @@ def parse_response(response):
 
 def fetch_games():
     if os.environ["ENV"] == "mock":
-        with open("../data/sample_games.json") as local_file:
+        with open(mock_source) as local_file:
             mock_json = json.load(local_file)
 
         return mock_json

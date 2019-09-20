@@ -7,8 +7,7 @@ logger = logging.getLogger('schedule')
 
 
 class CustomScheduler(Scheduler):
-    """
-    An implementation of Scheduler that catches jobs that fail and logs their
+    """An implementation of Scheduler that catches jobs that fail and logs their
     exception as an error.
     Use this to run jobs that may or may not crash as to not affect other jobs
     that are scheduled to run.
