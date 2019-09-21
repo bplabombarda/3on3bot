@@ -1,11 +1,20 @@
+import logging
 import time
 
 from bot.scheduler import CustomScheduler
 from bot.tweet import tweet_ot_games
 
+logger = logging.getLogger(__name__)
 scheduler = CustomScheduler()
 
-scheduler.every(1).minute.do(tweet_ot_games)
+
+def run():
+    try:
+        tweet_ot_games()
+    except Exception as e:
+        logger.error(e)
+
+scheduler.every(1).minute.do(run)
 
 while True:
     scheduler.run_pending()
