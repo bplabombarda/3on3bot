@@ -7,4 +7,4 @@ WORKDIR /3on3bot
 
 RUN poetry install
 
-CMD ["poetry", "run", "python", "run.py"]
+CMD ["poetry", "run", "python", "run_bot.py"]

@@ -9,6 +9,7 @@ def get_status(game):
     home = teams[game["htv"]]
     score = game["hts"] if game["ats"] == game["hts"] else None
 
+    # TODO - handle preseason, regular season, and playoffs separately.
     return STATUSES["default"].format(
         away["handle"],
         home["handle"],
@@ -18,8 +19,7 @@ def get_status(game):
 
 def get_and_post_status(game):
     status = get_status(game)
-    # api.update_status(status)
-    print(status)
+    api.update_status(status)
 
 
 def tweet_ot_games():
