@@ -42,6 +42,7 @@ htmlcov/
 .coverage.*
 .cache
 nosetests.xml
+coverage/
 coverage.xml
 *.cover
 .hypothesis/
@@ -106,5 +107,5 @@ venv.bak/
 # Config
 config
 
-# VSC
+# VS Code
 .vscode

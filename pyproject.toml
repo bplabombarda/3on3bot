@@ -9,9 +9,6 @@ python = "^3.7"
 requests = "^2.21"
 tweepy = "^3.7"
 pyyaml = "^3.13"
-jupyter = "^1.0"
-jupyterthemes = "^0.20.0"
-schedule = "^0.6.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^3.0"
